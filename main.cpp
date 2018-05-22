@@ -1,75 +1,80 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Date
+
+class NhanVien
 {
-    private:
-            int ngay;
-            int thang;
-            int nam;
-    public:
-            Date():ngay(0),thang(0),nam(0){}
-            Date(int a,int b,int c):ngay(a),thang(b),nam(c){}
-            
-            void setNgay(int a)
-            {
-                this->ngay = a;
-            }
-            int getNgay()
-            {
-                return this->ngay;
-            }
-            void setThang(int b)
-            {
-                this->thang = b;
-            }
-            int getThang()
-            {
-                return this->thang;
-            }
-               void setNam(int c)
-            {
-                this->nam = c;
-            }
-            int getNam()
-            {
-                return this->nam;
-            }
-};
-class Maytinh
-{
-    private:
-            char hsx;
-            int sanxuat;
-    public:
-            Maytinh():hsx(0),sanxuat(0){}
-            Date(int a,int b,int c,char e):sanxuat(a,b,c),hsx(e){}
-           void setHSX(char e)
-           {
-                this->hsx = e;
-           }
-           char getHSX()
-           {
-                return this->hsx;
-           }
-           char xuatHSX()
-           {
-              cout<<hsx.getHSX;
-           }
-           void setSanXuat(int a,int b,int c)
-           {
-                this->sanxuat = Date(a,b,c);
-           }
-           Date getSanXuat()
-           {
-                return this->sanxuat;
-           }
-           
+	private:
+		string hoten;
+		string cmnd;
+		float giolam;
+		float t; // so tien lam 1 gio
+	public:
+		NhanVien():hoten(""),cmnd(""),giolam(0),t(0){}
+		NhanVien(string a,string b,float c,float d):hoten(a),cmnd(b),giolam(c),t(d){}
+		void setHoTen(string a)
+		{
+			this->hoten = a;
+		}
+		string getHoTen()
+		{
+			return this->hoten;
+		}
+		void setCMND(string b)
+		{
+			this->cmnd = b;
+		}
+		string getCMND()const
+		{
+			return this->cmnd;
+		}
+		void setGioLam(float c)
+		{
+			this->giolam = c;
+		}
+		float getGioLam()const
+		{
+			return this->giolam;
+		}
+		void setT(float d)
+		{
+			this->t = d;
+		}
+		float getT()const
+		{
+			return this->t;
+		}
+		float tinhluong()
+		{
+			
+			return this->giolam*1500000+this->T;
+		}
+
+
+		
 };
 
 int main()
 {
-    Maytinh a(8,9,2018);
-    cout<<a.getSanXuat<<endl;
-}
+	NhanVien a;
+	NhanVien b;
+	NhanVien c;
+	string u;
+	cin>>u;
+	NhanVien d;
+	cout<<"nhap ho va ten: ";
+	a.setHoTen(u);
+	cout<<"nhap cmnd: ";
+	cin>>b.cmnd();
+	cout<<"nhap gio lam: ";
+	cin>>c.giolam();
+	cout<<"nhap so tien cong trong 1 gio: ";
+	cin>>d.t();
 
+cout<<"ten: "<<a.getHoTen()<<endl;
+cout<<"CMND: "<<b.getCMND()<<endl;
+cout<<"gio lam: "<<c.getGioLam()<<endl;
+cout<<"so tien cong trong 1 gio: "<<d.getGioLam()<<endl;
+//cout<<"tong tien cong lam duoc: "<<tinhluong(c,d)<<endl; 
+}
